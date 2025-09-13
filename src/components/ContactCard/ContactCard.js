@@ -50,7 +50,7 @@ function ContactCard() {
         <div className={`contact-profile${image ? ' has-avatar' : ''}`}>
           {image && (
             <figure className="contact-avatar">
-              <img src={image} alt={imageAlt || title} loading="lazy" />
+              <img src={process.env.PUBLIC_URL + '/Spencer.jpg'} alt={imageAlt || title} loading="lazy" />
             </figure>
           )}
           <ul className="contact-list" role="list">

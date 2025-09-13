@@ -5,7 +5,7 @@ const about = {
   id: 'about',
   title: 'About Me',
   paragraphs: [
-    'This isaaaa a brief description about me. I am a web developer with a passion for creating beautiful and functional websites.'
+    'Full Stack Developer proficient in JavaScript and Python, with a passion for building end-to-end solutions that improve user experience and drive business impact. Skilled in designing APIs, integrating databases, and deploying applications to cloud environments. Excited to leverage technical expertise to solve real-world challenges.'
   ]
 };
 
