@@ -1,0 +1,49 @@
+/* Work experience item styling (consistent with DegreeCard + ResumeCard aesthetics) */
+.work-exp-item {
+  --item-border: #e2e8f0;
+  --item-accent: #3182ce;
+  background: #ffffff;
+  border: 1px solid var(--item-border);
+  border-radius: 8px;
+  padding: 1.1rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+.work-exp-item:hover { border-color: #cbd5e1; box-shadow: 0 3px 10px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
+.work-exp-item-header { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.work-exp-item-heading-group { flex: 1 1 auto; min-width: 0; }
+.work-exp-item-role { margin: 0; font-size: 0.98rem; font-weight: 600; letter-spacing: -0.01em; color: #1a202c; line-height: 1.1; }
+.work-exp-item-company { margin-top: 0.25rem; font-size: 0.74rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #4a5568; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.work-exp-item-period { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; color: #2d3748; white-space: nowrap; flex-shrink: 0; margin-top: 0.15rem; }
+.work-exp-item-location { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.04em; color: #4a5568; text-transform: uppercase; }
+
+/* Tech stack chips */
+.work-exp-item-tech { list-style: none; margin: 0.25rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; }
+.work-exp-item-tech li { background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 999px; padding: 0.3rem 0.65rem 0.28rem; font-size: 0.63rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #334155; line-height: 1; }
+
+/* Bullets */
+.work-exp-item-bullets { list-style: none; margin: 0.35rem 0 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.72rem; line-height: 1.45; color: #2d3748; }
+.work-exp-item-bullets li { position: relative; padding-left: 0.6rem; }
+.work-exp-item-bullets li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 4px; height: 4px; background: var(--item-accent); border-radius: 50%; }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .work-exp-item { background: #2d3748; border-color: #4a5568; }
+  .work-exp-item:hover { border-color: #718096; box-shadow: 0 3px 10px rgba(0,0,0,0.4); }
+  .work-exp-item-role { color: #f1f5f9; }
+  .work-exp-item-company { color: #a0aec0; }
+  .work-exp-item-period { color: #e2e8f0; }
+  .work-exp-item-location { color: #a0aec0; }
+  .work-exp-item-tech li { background: #394861; border-color: #4a5568; color: #f1f5f9; }
+  .work-exp-item-bullets { color: #e2e8f0; }
+}
+
+/* Narrow layout adjustments */
+@media (max-width: 560px) {
+  .work-exp-item-header { flex-direction: column; align-items: flex-start; }
+  .work-exp-item-period { margin-top: 0.35rem; }
+  .work-exp-item-company { white-space: normal; }
+}

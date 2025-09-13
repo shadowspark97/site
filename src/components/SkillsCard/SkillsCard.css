@@ -1,0 +1,84 @@
+/* SkillsCard specific styling: pill/tag buttons */
+#skills .skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.75rem;
+}
+
+#skills .skill-item { margin: 0; padding: 0; }
+
+#skills .skill-pill {
+  --pill-bg: #f1f5f9;
+  --pill-bg-hover: #e2e8f0;
+  --pill-bg-active: #cbd5e1;
+  --pill-text: #334155;
+  --pill-border: #e2e8f0;
+  --pill-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.04);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.95rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  color: var(--pill-text);
+  cursor: pointer;
+  line-height: 1;
+  transition: background .18s ease, box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+  box-shadow: var(--pill-shadow);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#skills .skill-pill:hover {
+  background: var(--pill-bg-hover);
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+#skills .skill-pill:active {
+  background: var(--pill-bg-active);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+#skills .skill-pill:focus-visible {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
+#skills .skill-pill-label { pointer-events: none; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #skills .skill-pill { transition: none; }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  #skills .skill-pill {
+    --pill-bg: #394861;
+    --pill-bg-hover: #455571;
+    --pill-bg-active: #526482;
+    --pill-text: #f1f5f9;
+    --pill-border: #4a5568;
+    --pill-shadow: 0 1px 2px rgba(0,0,0,0.5), 0 1px 1px rgba(0,0,0,0.4);
+  }
+  #skills .skill-pill:focus-visible { outline-color: #63b3ed; }
+}
+
+/* Compact responsiveness */
+@media (max-width: 600px) {
+  #skills .skills-list { gap: 0.55rem 0.6rem; }
+  #skills .skill-pill { font-size: 0.65rem; padding: 0.5rem 0.75rem 0.45rem; }
+}

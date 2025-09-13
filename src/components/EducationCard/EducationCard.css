@@ -1,0 +1,16 @@
+/* Degree list layout inside ResumeCard */
+.degree-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  /* spacing already defined; no change needed for single column */
+}
+
+@media (max-width: 480px) {
+}
+
+/* Dark mode: no additional rules needed; ResumeCard handles container */

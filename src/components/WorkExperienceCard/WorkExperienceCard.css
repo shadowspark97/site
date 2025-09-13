@@ -1,0 +1,14 @@
+/* Container for stacked work experience items */
+.work-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional subtle timeline connector (future): could add a pseudo-element */
+
+@media (max-width: 640px) {
+  .work-exp-list { gap: 1rem; }
+}

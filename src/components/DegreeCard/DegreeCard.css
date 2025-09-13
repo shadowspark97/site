@@ -1,0 +1,141 @@
+/* Resume-like DegreeCard styling */
+.degree-card {
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-border-hover: #cbd5e1;
+  --title-color: #1a202c;
+  --institution-color: #2d3748;
+  --muted: #4a5568;
+  --years-color: #2d3748;
+  --accent-bullet: #3182ce;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.1rem 1.15rem 1.15rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  position: relative;
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+
+.degree-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* Header: degree + institution left, years right */
+.degree-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.degree-card-heading-group { flex: 1 1 auto; min-width: 0; }
+
+.degree-card-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--title-color);
+  line-height: 1.1;
+}
+
+.degree-card-institution {
+  margin-top: 0.25rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.degree-card-years {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--years-color);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.degree-card-location-line {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Notes section */
+.degree-card-notes {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #2d3748;
+  padding-left: 1rem;
+}
+
+.degree-card-notes.single-note {
+  list-style: none;
+  padding-left: 0;
+}
+
+.degree-card-notes li { position: relative; margin: 0 0 0.25rem 0; padding-left: 0.55rem; }
+.degree-card-notes li:last-child { margin-bottom: 0; }
+.degree-card-notes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-bullet);
+  border-radius: 50%;
+}
+
+/* Improve printing readability */
+@media print {
+  .degree-card {
+    box-shadow: none !important;
+    border-color: #cccccc;
+    transform: none !important;
+    page-break-inside: avoid;
+  }
+  .degree-card:hover { box-shadow: none; }
+}
+
+/* Compact adjustments for narrow widths */
+@media (max-width: 520px) {
+  .degree-card-header { flex-direction: column; align-items: flex-start; }
+  .degree-card-years { margin-top: 0.4rem; }
+  .degree-card-institution { white-space: normal; }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .degree-card {
+    --card-bg: #2d3748;
+    --card-border: #4a5568;
+    --card-border-hover: #718096;
+    --title-color: #f1f5f9;
+    --institution-color: #e2e8f0;
+    --muted: #a0aec0;
+    --years-color: #e2e8f0;
+    --accent-bullet: #63b3ed;
+  }
+  .degree-card-notes { color: #e2e8f0; }
+  .degree-card-header { border-bottom: 1px solid rgba(255,255,255,0.08); }
+}

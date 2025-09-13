@@ -1,0 +1,12 @@
+/* Container for stacked research/client project items (mirrors work-exp-list) */
+.research-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  .research-projects-list { gap: 1rem; }
+}

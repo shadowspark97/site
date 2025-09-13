@@ -1,0 +1,32 @@
+/* Layout container for stacking resume section cards */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Adjust vertical spacing between cards */
+  max-width: 900px; /* Optional reading width */
+  width: 100%;
+  margin: 0 auto; /* Center horizontally inside parent */
+  padding-bottom: 2rem;
+  padding-top: 0rem;
+}
+
+/* Subtle staged entrance animation (optional) */
+.resume-container > * {
+  animation: resume-fade-up 0.45s ease both;
+}
+.resume-container > *:nth-child(2) { animation-delay: 0.06s; }
+.resume-container > *:nth-child(3) { animation-delay: 0.12s; }
+.resume-container > *:nth-child(4) { animation-delay: 0.18s; }
+
+@keyframes resume-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .resume-container { gap: 2rem; padding-bottom: 1.5rem; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .resume-container { /* nothing special needed; child cards handle theme */ }
+}

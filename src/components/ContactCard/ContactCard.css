@@ -1,0 +1,161 @@
+/* ContactCard specific styles */
+#contact .contact-card-body { font-size: 0.95rem; }
+
+/* Profile layout container */
+#contact .contact-profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+#contact .contact-profile.has-avatar { margin-top: 0.25rem; }
+
+/* Avatar styles */
+#contact .contact-avatar {
+  margin: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px -3px rgba(0,0,0,0.18), 0 2px 4px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+}
+
+#contact .contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease, filter .5s ease;
+}
+
+#contact .contact-avatar:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #contact .contact-avatar img, #contact .contact-avatar:hover img { transform: none; filter: none; }
+}
+
+#contact .contact-list { list-style: none; margin: 0; padding: 0; }
+
+/* Grid rows for alignment: label | value | actions */
+#contact .contact-item {
+  display: grid;
+  grid-template-columns: minmax(70px, max-content) 1fr auto;
+  align-items: center;
+  column-gap: 1.25rem;
+  row-gap: 0.35rem;
+  padding: 0.65rem 0;
+  position: relative;
+}
+
+/* Divider lines */
+#contact .contact-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* Label emphasis */
+#contact .contact-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  line-height: 1.1;
+}
+
+/* Value styling (muted -> accent on hover) */
+#contact .contact-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d3748;
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color .25s ease;
+}
+#contact .contact-value::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #3182ce;
+  transition: width .3s ease;
+}
+#contact .contact-value:hover { color: #1e429f; }
+#contact .contact-value:hover::after { width: 100%; }
+#contact .contact-value:focus-visible { outline: 2px solid #3182ce; outline-offset: 2px; }
+
+/* Actions column */
+#contact .contact-actions { display: flex; align-items: center; }
+
+/* Copy buttons */
+#contact .copy-btn {
+  --cb-bg: #f1f5f9;
+  --cb-bg-hover: #e2e8f0;
+  --cb-bg-active: #cbd5e1;
+  --cb-border: #e2e8f0;
+  --cb-text: #334155;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg);
+  color: var(--cb-text);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.7rem 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 1;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background .18s ease, transform .18s ease, box-shadow .18s ease, border-color .18s ease, color .18s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.04);
+}
+#contact .copy-btn:hover { background: var(--cb-bg-hover); border-color: #cbd5e1; transform: translateY(-2px); }
+#contact .copy-btn:active { background: var(--cb-bg-active); transform: translateY(0); box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+#contact .copy-btn:focus-visible { outline: 2px solid #3182ce; outline-offset: 2px; }
+#contact .copy-btn.copied { background: #d1fae5; border-color: #34d399; color: #065f46; }
+#contact .copy-btn.copied::after {
+  content: '\2713'; /* checkmark */
+  font-size: 0.75rem;
+  line-height: 1;
+  position: relative;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  #contact .contact-avatar { border-color: rgba(255,255,255,0.15); background: linear-gradient(135deg,#1e293b,#334155); box-shadow: 0 6px 18px -4px rgba(0,0,0,0.6); }
+  #contact .contact-avatar img { filter: brightness(0.95); }
+  #contact .contact-label { color: #a0aec0; }
+  #contact .contact-value { color: #f1f5f9; }
+  #contact .contact-value:hover { color: #63b3ed; }
+  #contact .contact-item:not(:last-child)::after { background: #4a5568; }
+  #contact .contact-value::after { background: #63b3ed; }
+  #contact .copy-btn { --cb-bg: #394861; --cb-bg-hover: #455571; --cb-bg-active: #526482; --cb-border: #4a5568; --cb-text: #f1f5f9; box-shadow: 0 1px 2px rgba(0,0,0,0.5), 0 1px 1px rgba(0,0,0,0.4); }
+  #contact .copy-btn:focus-visible { outline-color: #63b3ed; }
+  #contact .copy-btn.copied { background: #065f46; border-color: #059669; color: #ecfdf5; }
+}
+
+/* Responsiveness */
+@media (max-width: 520px) {
+  #contact .contact-profile { grid-template-columns: 1fr; }
+  #contact .contact-avatar { width: 110px; height: 110px; }
+  #contact .contact-item { grid-template-columns: 1fr; align-items: flex-start; }
+  #contact .contact-actions { margin-top: 0.25rem; }
+}
