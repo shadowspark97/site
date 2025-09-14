@@ -28,14 +28,12 @@ function DegreeCard({ title, institution, years, location, notes }) {
 
   return (
     <article className="degree-card" aria-label={`${title} at ${institution}`}>
-      <header className="degree-card-header">
-        <div className="degree-card-heading-group">
-          <h3 className="degree-card-title">{title}</h3>
-          <div className="degree-card-institution">{institution}</div>
-        </div>
-        <div className="degree-card-years" aria-label="Years attended">{years}</div>
+      <header className="degree-card-header grid-two-line">
+        <h3 className="degree-card-title">{title}</h3>
+        <h3 className="degree-card-years" aria-label="Years attended">{years}</h3>
+        <h3 className="degree-card-institution">{institution}</h3>
+        <h3 className="degree-card-location-line" aria-label="Location">{location}</h3>
       </header>
-      <div className="degree-card-location-line">{location}</div>
       {normalizedNotes.length > 0 && (
         normalizedNotes.length > 1 ? (
           <ul className="degree-card-notes" aria-label="Highlights">

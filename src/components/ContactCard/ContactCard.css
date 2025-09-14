@@ -154,8 +154,33 @@
 
 /* Responsiveness */
 @media (max-width: 520px) {
-  #contact .contact-profile { grid-template-columns: 1fr; }
-  #contact .contact-avatar { width: 110px; height: 110px; }
-  #contact .contact-item { grid-template-columns: 1fr; align-items: flex-start; }
-  #contact .contact-actions { margin-top: 0.25rem; }
+  #contact .contact-profile {
+    /* keep two columns: avatar | list */
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+  }
+  #contact .contact-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  #contact .contact-item {
+    /* preserve 3-column inline layout */
+    grid-template-columns: minmax(58px, max-content) minmax(0,1fr) auto;
+    column-gap: 0.6rem;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  #contact .contact-value {
+    min-width: 0;            /* allow wrapping instead of forcing a break */
+    overflow-wrap: anywhere;
+  }
+  #contact .contact-actions {
+    margin-top: 0;           /* avoid pushing button to a new line */
+  }
+  #contact .copy-btn {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.55rem 0.35rem;
+    transform: none;
+  }
 }
+

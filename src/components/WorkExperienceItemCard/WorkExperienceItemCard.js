@@ -28,14 +28,12 @@ function WorkExperienceItemCard({ role, company, period, location, bullets, tech
 
   return (
     <article className="work-exp-item" aria-label={`${role} at ${company}`}>
-      <header className="work-exp-item-header">
-        <div className="work-exp-item-heading-group">
-          <h3 className="work-exp-item-role">{role}</h3>
-          <div className="work-exp-item-company">{company}</div>
-        </div>
-        <div className="work-exp-item-period" aria-label="Employment period">{period}</div>
+      <header className="work-exp-item-header grid-two-line">
+        <h3 className="work-exp-item-role">{role}</h3>
+        <h3 className="work-exp-item-period" aria-label="Period">{period}</h3>
+        <h3 className="work-exp-item-company">{company}</h3>
+        <h3 className="work-exp-item-location" aria-label="Location">{location}</h3>
       </header>
-      <div className="work-exp-item-location">{location}</div>
       {tech && tech.length > 0 && (
         <ul className="work-exp-item-tech" aria-label="Tech stack">
           {tech.map(t => <li key={t}>{t}</li>)}

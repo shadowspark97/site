@@ -7,7 +7,7 @@ const skills = {
   skills: [
     'JavaScript', 'TypeScript', 'React', 'Node.js', 'Express', 'REST APIs',
     'HTML5', 'CSS3', 'Responsive Design', 'Git', 'Testing', 'SQL',
-    'Python', 'Data Structures', 'Algorithms', 'Problem Solving', 'Django'
+    'Python', 'Data Structures', 'Machine Learning', 'Artificial Intelligence', 'Prompt Engineering', 'Problem Solving', 'Django'
   ]
 };
 
