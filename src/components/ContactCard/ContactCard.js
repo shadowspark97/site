@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ResumeCard from '../ResumeCard';
+import ResumeSection from '../ResumeSection';
 import './ContactCard.css';
 import contactData from '../../data/contact';
 
@@ -45,7 +45,7 @@ function ContactCard() {
   }
 
   return (
-  <ResumeCard title={title} id={id} headingLevel={2}>
+  <ResumeSection title={title} id={id} headingLevel={2}>
       <div className="contact-card-body" aria-label="Contact information">
         <div className={`contact-profile${image ? ' has-avatar' : ''}`}>
           {image && (
@@ -85,7 +85,7 @@ function ContactCard() {
           </ul>
         </div>
       </div>
-    </ResumeCard>
+  </ResumeSection>
   );
 }
 

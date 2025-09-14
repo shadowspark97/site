@@ -1,5 +1,5 @@
 import React from 'react';
-import ResumeCard from '../ResumeCard';
+import ResumeSection from '../ResumeSection';
 import './SkillsCard.css';
 import skillsData from '../../data/skills';
 
@@ -17,7 +17,7 @@ function SkillsCard({ skills, title }) {
   const list = (skills && skills.length ? skills : dataSkills).slice();
 
   return (
-    <ResumeCard title={effectiveTitle} id={id}>
+  <ResumeSection title={effectiveTitle} id={id}>
       <ul className="skills-list" aria-label="Skill set">
         {list.map(skill => (
           <li key={skill} className="skill-item">
@@ -32,7 +32,7 @@ function SkillsCard({ skills, title }) {
           </li>
         ))}
       </ul>
-    </ResumeCard>
+  </ResumeSection>
   );
 }
 

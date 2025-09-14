@@ -142,19 +142,3 @@
   .degree-card-header.grid-two-line .degree-card-location-line { font-size: 0.7rem; }
   .degree-card-header.grid-two-line .degree-card-institution { white-space: normal; }
 }
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .degree-card {
-    --card-bg: #2d3748;
-    --card-border: #4a5568;
-    --card-border-hover: #718096;
-    --title-color: #f1f5f9;
-    --institution-color: #e2e8f0;
-    --muted: #a0aec0;
-    --years-color: #e2e8f0;
-    --accent-bullet: #63b3ed;
-  }
-  .degree-card-notes { color: #e2e8f0; }
-  .degree-card-header { border-bottom: 1px solid rgba(255,255,255,0.08); }
-}

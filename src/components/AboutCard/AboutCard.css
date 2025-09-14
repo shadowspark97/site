@@ -1,4 +1,4 @@
-/* AboutCard specific content styling (container now provided by ResumeCard) */
+/* AboutCard specific content styling (container now provided by ResumeSection) */
 #about p {
   margin-bottom: 1.1rem;
   color: #4a5568;
@@ -8,7 +8,3 @@
 }
 
 #about p:last-of-type { margin-bottom: 0; }
-
-@media (prefers-color-scheme: dark) {
-  #about p { color: #e2e8f0; }
-}

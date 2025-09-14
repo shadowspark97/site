@@ -5,9 +5,9 @@ import SkillsCard from '../SkillsCard/SkillsCard';
 import WorkExperienceCard from '../WorkExperienceCard/WorkExperienceCard';
 import ResearchProjectsCard from '../ResearchProjectsCard/ResearchProjectsCard';
 import ContactCard from '../ContactCard';
-
+import education from '../../data/education';
+import ResumeCardListSection from '../ResumeCardListSection/ResumeCardListSection';
 import './ResumeContainer.css';
-
 /*
  * ResumeContainer
  * Purpose: Central place to arrange resume-style sections (cards) with consistent spacing.
@@ -22,6 +22,7 @@ function ResumeContainer() {
       <SkillsCard />
   <WorkExperienceCard />
   <ResearchProjectsCard />
+
       {/* Future: <SkillsCard /> <ProjectsCard /> <ContactCard /> */}
     </section>
   );

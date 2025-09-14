@@ -1,24 +1,24 @@
 import React from 'react';
-import ResumeCard from '../ResumeCard';
+import ResumeSection from '../ResumeSection';
 import WorkExperienceItemCard from '../WorkExperienceItemCard';
 import './WorkExperienceCard.css';
 import workData from '../../data/work';
 
 /*
  * WorkExperienceCard
- * Wraps a list of WorkExperienceItemCard items inside a ResumeCard.
+ * Wraps a list of WorkExperienceItemCard items inside a ResumeSection.
  * Future extension: Accept data via props instead of internal array.
  */
 function WorkExperienceCard() {
   const { id, title, items = [] } = workData;
   return (
-    <ResumeCard title={title} id={id}>
+  <ResumeSection title={title} id={id}>
       <div className="work-exp-list">
         {items.map(exp => (
           <WorkExperienceItemCard key={exp.role + exp.company} {...exp} />
         ))}
       </div>
-    </ResumeCard>
+  </ResumeSection>
   );
 }
 

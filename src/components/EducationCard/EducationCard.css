@@ -1,4 +1,4 @@
-/* Degree list layout inside ResumeCard */
+/* Degree list layout inside ResumeSection */
 .degree-grid {
   display: flex;
   flex-direction: column;
@@ -13,4 +13,4 @@
 @media (max-width: 480px) {
 }
 
-/* Dark mode: no additional rules needed; ResumeCard handles container */
+/* Dark mode: no additional rules needed; ResumeSection handles container */

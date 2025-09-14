@@ -1,0 +1,63 @@
+/* Base shared resume section styling (renamed from resume-card) */
+.resume-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.18);
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.resume-section:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.14);
+  transform: translateY(-4px);
+}
+
+/* Header */
+.resume-section-header { margin-bottom: 1.75rem; position: relative; }
+.resume-section-title {
+  margin: 0 0 .75rem 0;
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #1a202c;
+  position: relative;
+}
+.resume-section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 42px;
+  height: 2px;
+  background: #3182ce;
+  transition: width .3s ease;
+}
+.resume-section:hover .resume-section-title::after { width: 80px; }
+.resume-section-subtitle { font-size: 0.95rem; color: #4a5568; line-height: 1.4; margin-top: -0.25rem; }
+
+/* Body */
+.resume-section-body { font-size: 0.95rem; line-height: 1.6; color: #2d3748; }
+
+/* Footer */
+.resume-section-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #64748b; }
+
+/* Utility modifiers (matching previous naming pattern but new prefix) */
+.resume-section.compact { padding: 1.75rem 1.75rem 2rem; }
+.resume-section.no-hover:hover { transform: none; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.18); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-section { padding: 2rem; border-radius: 10px; }
+  .resume-section-title { font-size: 1.625rem; }
+}
+@media (max-width: 480px) {
+  .resume-section { padding: 1.5rem; }
+  .resume-section-title { font-size: 1.5rem; }
+}
+

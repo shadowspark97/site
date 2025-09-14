@@ -1,16 +1,16 @@
 import React from 'react';
 import './AboutCard.css';
-import ResumeCard from '../ResumeCard';
+import ResumeSection from '../ResumeSection';
 import aboutData from '../../data/about';
 
 function AboutCard() {
   const { id, title, paragraphs = [] } = aboutData;
   return (
-    <ResumeCard title={title} id={id}>
+  <ResumeSection title={title} id={id}>
       {paragraphs.map((text, idx) => (
         <p key={idx}>{text}</p>
       ))}
-    </ResumeCard>
+  </ResumeSection>
   );
 }
 

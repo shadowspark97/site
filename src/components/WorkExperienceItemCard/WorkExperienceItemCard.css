@@ -1,4 +1,4 @@
-/* Work experience item styling (consistent with DegreeCard + ResumeCard aesthetics) */
+/* Work experience item styling (consistent with DegreeCard + ResumeSection aesthetics) */
 .work-exp-item {
   --item-border: #e2e8f0;
   --item-accent: #3182ce;
@@ -47,18 +47,6 @@
 .work-exp-item-bullets { list-style: none; margin: 0.35rem 0 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.72rem; line-height: 1.45; color: #2d3748; }
 .work-exp-item-bullets li { position: relative; padding-left: 0.6rem; }
 .work-exp-item-bullets li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 4px; height: 4px; background: var(--item-accent); border-radius: 50%; }
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .work-exp-item { background: #2d3748; border-color: #4a5568; }
-  .work-exp-item:hover { border-color: #718096; box-shadow: 0 3px 10px rgba(0,0,0,0.4); }
-  .work-exp-item-role { color: #f1f5f9; }
-  .work-exp-item-company { color: #a0aec0; }
-  .work-exp-item-period { color: #e2e8f0; }
-  .work-exp-item-location { color: #a0aec0; }
-  .work-exp-item-tech li { background: #394861; border-color: #4a5568; color: #f1f5f9; }
-  .work-exp-item-bullets { color: #e2e8f0; }
-}
 
 /* Narrow layout adjustments */
 @media (max-width: 560px) {

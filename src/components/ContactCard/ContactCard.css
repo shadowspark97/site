@@ -138,20 +138,6 @@
   position: relative;
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  #contact .contact-avatar { border-color: rgba(255,255,255,0.15); background: linear-gradient(135deg,#1e293b,#334155); box-shadow: 0 6px 18px -4px rgba(0,0,0,0.6); }
-  #contact .contact-avatar img { filter: brightness(0.95); }
-  #contact .contact-label { color: #a0aec0; }
-  #contact .contact-value { color: #f1f5f9; }
-  #contact .contact-value:hover { color: #63b3ed; }
-  #contact .contact-item:not(:last-child)::after { background: #4a5568; }
-  #contact .contact-value::after { background: #63b3ed; }
-  #contact .copy-btn { --cb-bg: #394861; --cb-bg-hover: #455571; --cb-bg-active: #526482; --cb-border: #4a5568; --cb-text: #f1f5f9; box-shadow: 0 1px 2px rgba(0,0,0,0.5), 0 1px 1px rgba(0,0,0,0.4); }
-  #contact .copy-btn:focus-visible { outline-color: #63b3ed; }
-  #contact .copy-btn.copied { background: #065f46; border-color: #059669; color: #ecfdf5; }
-}
-
 /* Responsiveness */
 @media (max-width: 520px) {
   #contact .contact-profile {

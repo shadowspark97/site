@@ -1,5 +1,5 @@
 import React from 'react';
-import ResumeCard from '../ResumeCard';
+import ResumeSection from '../ResumeSection';
 import WorkExperienceItemCard from '../WorkExperienceItemCard';
 import './ResearchProjectsCard.css';
 import researchData from '../../data/research';
@@ -11,13 +11,13 @@ import researchData from '../../data/research';
 function ResearchProjectsCard() {
   const { id, title, items = [] } = researchData;
   return (
-    <ResumeCard title={title} id={id}>
+  <ResumeSection title={title} id={id}>
       <div className="research-projects-list">
         {items.map(item => (
           <WorkExperienceItemCard key={item.role + item.company} {...item} />
         ))}
       </div>
-    </ResumeCard>
+  </ResumeSection>
   );
 }
 
